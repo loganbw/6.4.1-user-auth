@@ -6,7 +6,7 @@ module.exports = function(app){
   var homeRouter = express.Router();
   // const postRouter = express.Router();
 
-  homeRouter.get('/', HomeController.index);
+  homeRouter.get('/', HomeController.list);
   // homeRouter.get('/about/', HomeController.about);
   // homeRouter.get('/contact/', HomeController.contact);
 
@@ -15,4 +15,4 @@ module.exports = function(app){
 
   app.use('/', homeRouter);
   // app.use('/post', postRouter);
-}
+};

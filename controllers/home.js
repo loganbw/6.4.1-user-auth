@@ -1,7 +1,7 @@
 var Robot = require('../models/robot');
 
 var HomeController = {
-   index: function(req, res){
+   list: function(req, res){
     Robot.getAll(function(err, results){
       console.log('ERROR::' + err);
       res.render('robot/list', {models: results});

@@ -3,11 +3,11 @@ const exphbs = require('express-handlebars')
 const routes = require('./router');
 // var MongoClient = require('mongodb').MongoClient
 //   , assert = require('assert');
-var mongo = require('./mongoutils');
+const mongo = require('./mongoutils');
 
 const app = express();
 //---------------------------------------------------------------//
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 // pass argument of app into router function

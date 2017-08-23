@@ -1,4 +1,4 @@
-var Post = require('../models/data');
+// var Post = require('../models/data');
 
 var PostController = {
   // list: function(req, res){

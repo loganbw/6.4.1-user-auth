@@ -1,8 +1,12 @@
+var Robot = require('../models/robot');
 
 var HomeController = {
-  // index: function(req, res){
-  //   res.send('Hello!');
-  // },
+   index: function(req, res){
+    Robot.getAll(function(err, results){
+      console.log('ERROR::' + err);
+      res.render('robot/list', {models: results});
+    });
+  }
   // about: function(req, res){
   //   res.send('About what?');
   // },

@@ -1,8 +1,9 @@
 const express = require('express');
 const exphbs = require('express-handlebars')
 const routes = require('./router');
-var MongoClient = require('mongodb').MongoClient
-  , assert = require('assert');
+// var MongoClient = require('mongodb').MongoClient
+//   , assert = require('assert');
+var mongo = require('./mongoutils');
 
 const app = express();
 //---------------------------------------------------------------//
@@ -13,8 +14,10 @@ app.set('view engine', 'handlebars');
 routes(app);
 
 // for the test suite; avoids app from running on port 3000 if you've loaded app into test suite
-if(require.main === 'module'){
-  app.listen(3000);
-}
+// if(require.main === 'module'){
+  // app.listen(3000);
+// }
 
-app.listen(3000);
+mongo.connect('mongodb://localhost:27017/robotdb', () => {
+  app.listen(3000);
+});

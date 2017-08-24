@@ -9,7 +9,7 @@ const app = express();
 //---------------------------------------------------------------//
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
-
+console.log(hello);
 // pass argument of app into router function
 routes(app);
 
